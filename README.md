@@ -1,37 +1,57 @@
-# FAST-NRE
+# Dilated Convolutional Networks Incorporating Soft Entity Type Constraints for Distant Supervised Relation Extraction
 
-#### 项目介绍
-无可奉告
+Source code for IJCNN 2019 paper: [Dilated Convolutional Networks Incorporating Soft Entity Type Constraints for Distant Supervised Relation Extraction]()
 
-#### 软件架构
-软件架构说明
+## Overview
 
+![](figs/Architecture.png)
 
-#### 安装教程
+The architecture of our model, where $m_i$ indicates the original sentence for an entity pair. $p_j$ indicates the sentence feature encoded by DCNNs. Before calculating attention weight $\alpha_i$ for mention mi, its entity types are dynamically ajusted via the model prediction and current type labels to denoise and acquire soft entity type. Taking soft entity types into account, $\alpha_i$ is specified to the entity types of $m_i$. Finally, weighted summation is applied on all sentence features for producing bag feature $\mathbf{b}$.
 
-1. xxxx
-2. xxxx
-3. xxxx
+## Dependencies
 
-#### 使用说明
+* Pytorch 1.0.1
+* tqdm 4.31.1
+* scikit-learn 0.20.3
+* Compatible with Python 3.X
 
-1. xxxx
-2. xxxx
-3. xxxx
+## Dataset
 
-#### 参与贡献
+*  Like the paper "Neural Relation Extraction with Selective Attention over Instances", we use [Riedel NYT dataset](http://iesl.cs.umass.edu/riedel/ecml/) for evaluation.
+*  Our dataset can be downloaded from [here]().
 
-1. Fork 本项目
-2. 新建 Feat_xxx 分支
-3. 提交代码
-4. 新建 Pull Request
+## Training from scratch
 
+* Options for preprocessing, traning and testing
+  
+  All options can be modified in `nre/options.py`
 
-#### 码云特技
+* Preprocessing the dataset:
+  ```
+  python preprocess.py
+  ```
 
-1. 使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2. 码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3. 你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4. [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5. 码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6. 码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+* Train the model:
+  ```
+  python train.py -batch_size 160 -model_type PDCNN+TATT -gpu_num 1
+  ```
+  After training, the trained model can be found in `ckpt` directory.
+
+* Test the model:
+  ```
+  python test.py -batch_size 160 -model_type PDCNN+TATT -gpu_num 1 -pretrain_model ckpt/model_step_best.pt
+  ```
+
+## Evaluation Results
+
+![](figs/result.png)
+
+## Citation:
+
+Please cite the following paper if you use this code in your work.
+
+```
+None
+```
+
+For any clarification, please create an issue or contact huweilong@whu.edu.cn.
