@@ -70,13 +70,13 @@ We notice the training set used by Lin et al., 2016 has 522,611 sentences, while
 
 #### Precision Recall Curve
 
-![](figs/result.png)
+![](figs/result_supplement.png)
 
 #### Precision@N
 
 | P@N(%) | 100 | 200 | 300 | Mean |
 |--------|:---:|:---:|:---:|:----:|
-|PDCNN+TATT|80.2|76.1|70.8|75.7|
+|PDCNN+TATT|83.2|81.1|76.4|80.2|
 
 
 ## Citation:
