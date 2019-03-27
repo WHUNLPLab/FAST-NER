@@ -44,7 +44,40 @@ The architecture of our model, where $m_i$ indicates the original sentence for a
 
 ## Evaluation Results
 
+### Precision Recall Curve
+
 ![](figs/result.png)
+
+### Precision@N
+
+| P@N(%) | 100 | 200 | 300 | Mean |
+|--------|:---:|:---:|:---:|:----:|
+| CNN+AVE|67.3 | 64.7| 58.1| 63.4 |
+| CNN+ATT|76.2 |68.6 | 59.8| 68.2 |
+|PCNN+AVE|73.3 | 66.7| 62.8| 67.6|
+|PCNN+ATT|76.2 | 73.1| 67.4| 72.2 |
+|ResCNN-9|79.0 | 69.0| 61.0| 69.7 |
+|DCNN+ATT|75.2|72.1|67.0|71.5|
+|PDCNN+ATT|77.2|77.6|71.4|75.4|
+|CNN+TATT|79.2|73.1|66.4|72.9|
+|PCNN+TATT|76.2|73.1|68.4|72.6|
+|DCNN+TATT|77.2|70.6|72.1|73.3|
+|PDCNN+TATT|80.2|76.1|70.8|75.7|
+
+### Supplements
+
+We notice the training set used by Lin et al., 2016 has 522,611 sentences, while some recent works used the training set which has 570,088 sentences. For a fair comparison, we also conduct experiments on the latter. The following are the result:
+
+#### Precision Recall Curve
+
+![](figs/result.png)
+
+#### Precision@N
+
+| P@N(%) | 100 | 200 | 300 | Mean |
+|--------|:---:|:---:|:---:|:----:|
+|PDCNN+TATT|80.2|76.1|70.8|75.7|
+
 
 ## Citation:
 
