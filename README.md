@@ -18,8 +18,8 @@ The architecture of our model, where $m_i$ indicates the original sentence for a
 ## Dataset and Pretrained models
 
 *  Like the paper "Neural Relation Extraction with Selective Attention over Instances", we use [Riedel NYT dataset](http://iesl.cs.umass.edu/riedel/ecml/) for evaluation.
-*  Our dataset can be downloaded from [here](https://pan.baidu.com/s/1wtJ2aHcxzMxmWrVuJvtXrw), and extraction code is "e9zu".
-*  Our models can be downloaded from [here](https://pan.baidu.com/s/1OVF2Mb8Kupm0oM0BiufznQ), and extraction code is "h37z".
+*  Our dataset can be downloaded from [here](https://pan.baidu.com/s/1wtJ2aHcxzMxmWrVuJvtXrw), and the extraction code is "e9zu".
+*  Our models can be downloaded from [here](https://pan.baidu.com/s/1OVF2Mb8Kupm0oM0BiufznQ), and the extraction code is "h37z".
 
 ## Training from scratch
 
@@ -41,6 +41,11 @@ The architecture of our model, where $m_i$ indicates the original sentence for a
 * Test the model:
   ```
   python test.py -batch_size 160 -model_type PDCNN+TATT -gpu_num 1 -pretrain_model ckpt/model_step_best.pt
+  ```
+
+* Plot precision-recall curves
+  ```
+  python plot_tool.py -pr_data_dir pr_data/baselines
   ```
 
 ## Evaluation Results
