@@ -15,10 +15,11 @@ The architecture of our model, where $m_i$ indicates the original sentence for a
 * scikit-learn 0.20.3
 * Compatible with Python 3.X
 
-## Dataset
+## Dataset and Pretrained models
 
 *  Like the paper "Neural Relation Extraction with Selective Attention over Instances", we use [Riedel NYT dataset](http://iesl.cs.umass.edu/riedel/ecml/) for evaluation.
-*  Our dataset can be downloaded from [here]().
+*  Our dataset can be downloaded from [here](https://pan.baidu.com/s/1wtJ2aHcxzMxmWrVuJvtXrw), and extraction code is "e9zu".
+*  Our models can be downloaded from [here](https://pan.baidu.com/s/1OVF2Mb8Kupm0oM0BiufznQ), and extraction code is "h37z".
 
 ## Training from scratch
 
@@ -66,7 +67,7 @@ The architecture of our model, where $m_i$ indicates the original sentence for a
 
 ### Supplements
 
-We notice the training set used by Lin et al., 2016 has 522,611 sentences, while some recent works used the training set which has 570,088 sentences. For a fair comparison, we also conduct experiments on the latter. The following are the result:
+We notice the training set used by Lin et al., 2016 has 522,611 sentences, while some recent works used the training set which has 570,088 sentences. For a fair comparison, we also conduct experiments on the latter. The following are the results:
 
 #### Precision Recall Curve
 
@@ -84,7 +85,7 @@ We notice the training set used by Lin et al., 2016 has 522,611 sentences, while
 Please cite the following paper if you use this code in your work.
 
 ```
-None
+
 ```
 
 For any clarification, please create an issue or contact huweilong@whu.edu.cn.
